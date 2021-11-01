@@ -9,9 +9,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
-namespace PokemonWebApp.Pages
+namespace PokemonWebApp.Pages.Pokemons
 {
-    public class PokemonModel : PageModel
+    public class IndexModel : PageModel
     {
         public List<Pokemon> Pokemons { get; set; }
         string baseUrl = "https://localhost:44375/";

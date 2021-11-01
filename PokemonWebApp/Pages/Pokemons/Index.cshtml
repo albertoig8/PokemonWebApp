@@ -1,10 +1,13 @@
 ﻿@page
-@model PokemonWebApp.Pages.PokemonModel
+@model PokemonWebApp.Pages.Pokemons.IndexModel
 @{
 }
 
 <div class="container">
-    <h1 class="text-center">Lista de Pokemons</h1>
+    <h1 class="text-center">
+        Lista de Pokemons 
+        <a class="btn btn-outline-primary align-content-end" asp-area="" asp-page="/Pokemons/Create">Criar</a>
+    </h1>
     <section class="d-flex">
         @foreach (var data in Model.Pokemons)
 
