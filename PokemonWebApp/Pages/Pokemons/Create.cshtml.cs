@@ -15,7 +15,7 @@ namespace PokemonWebApp.Pages.Pokemons
     {
         // vai comparar os dados do post do fromulario com os atributos do objeto pokemon e vai armazenar na variavel abaixo automaticamente.
         [BindProperty]
-        // instanciando um objeto pokemon para armazenar os dados vindo formulario.
+        // Definindo um atributo pokemon para armazenar os dados vindo formulario.
         public Pokemon Pokemon { get; set; }
 
         // URL base da API.
@@ -24,6 +24,7 @@ namespace PokemonWebApp.Pages.Pokemons
         // OnPostAsync() captura a ação ou as informações disparadas pelo usuario atraves do formulario.
         public async Task<IActionResult> OnPostAsync()
         {
+            // HttpCliente é um serviço que auxilia em chamadas.
             using(var client = new HttpClient())
             {
                 // Passando a base URL para o programa atraves do uri.
@@ -35,7 +36,7 @@ namespace PokemonWebApp.Pages.Pokemons
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 // Defininco uma variavel para receber a resposta e os dados do Post.
                 HttpResponseMessage response = await client
-                    // recebendo o link da API e referenciando o objeto que vai receber os dados.
+                    // recebendo o Rota da API e referenciando o objeto que vai receber os dados.
                     .PostAsJsonAsync("api/Pokemons", Pokemon);
 
                 // Verificando se a resposta veio com sucesso ou não.
